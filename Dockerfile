@@ -13,16 +13,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements file into the container
-COPY requirements.txt /app
+COPY requirements.txt .
 
 # Install the required Python libraries
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --upgrade pydantic
+
 # Copy the FastAPI app code into the container
-COPY . /app
+COPY . .
 
 # Expose the port that the FastAPI app runs on
 EXPOSE 3059
 
 # Define the command to run the FastAPI app using uvicorn
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "3059"]
+CMD ["gunicorn", "api:app", "--host", "0.0.0.0", "--port", "3059"]
