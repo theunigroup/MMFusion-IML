@@ -44,7 +44,7 @@ modal_extractor = ModalitiesExtractor(config.MODEL.MODALS[1:], config.MODEL.NP_W
 
 model = CMNeXtWithConf(config.MODEL)
 
-ckpt = torch.load(args.ckpt)
+ckpt = torch.load(args.ckpt,map_location=torch.device('cpu'))
 
 model.load_state_dict(ckpt['state_dict'])
 modal_extractor.load_state_dict(ckpt['extractor_state_dict'])
