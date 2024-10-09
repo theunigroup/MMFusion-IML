@@ -274,4 +274,4 @@ gcloud beta run deploy image-manipulation-detection-api \
     --allow-unauthenticated \
     --execution-environment=gen2 \
     --port=3059 \
-    --set-env-vars=GOOGLE_ENTRYPOINT="gunicorn api:app --host 0.0.0.0 --port 3059"
+    --set-env-vars=GOOGLE_ENTRYPOINT="gunicorn api:app

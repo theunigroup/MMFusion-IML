@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 3059
 
 # Define the command to run the FastAPI app using uvicorn
-CMD ["gunicorn", "api:app", "--host", "0.0.0.0", "--port", "3059"]
+CMD ["gunicorn", "api:app"]
