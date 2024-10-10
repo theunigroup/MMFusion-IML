@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 3059
 
 # Define the command to run the FastAPI app using uvicorn
-CMD ["gunicorn", "api:app"]
+CMD ["gunicorn","--timeout","180" ,"api:app"]

@@ -19,7 +19,7 @@ parser.add_argument('-gpu', '--gpu', type=int, default=0, help='device, use -1 f
 parser.add_argument('-log', '--log', type=str, default='INFO', help='logging level')
 parser.add_argument('-exp', '--exp', type=str, default='experiments/ec_example_phase2.yaml', help='Yaml experiment file')
 parser.add_argument('-ckpt', '--ckpt', type=str, default='ckpt/early_fusion_detection.pth', help='Checkpoint')
-parser.add_argument('-path', '--path', type=str, default='/Users/wilson/Documents/GitHub/MMFusion-IML/test-images/bill.jpg', help='Image path')
+parser.add_argument('-path', '--path', type=str, default='/Users/wilson/Documents/GitHub/MMFusion-IML/test-images/tax.jpg', help='Image path')
 parser.add_argument('opts', help="other options", default=None, nargs=argparse.REMAINDER)
 
 args = parser.parse_args()
