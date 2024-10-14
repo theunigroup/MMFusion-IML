@@ -255,3 +255,23 @@ If you find our method useful in your work or you use some materials provided in
 ````
 
 Arxiv ("submitted manuscript") version accessible at: http://arxiv.org/abs/2312.01790
+
+### Deploy to UAT
+
+```shell
+
+
+gcloud beta run deploy image-manipulation-detection-api \
+    --source . \
+    --region=asia-east1 \
+    --memory=8Gi \
+    --cpu=8 \
+    --platform=managed \
+    --min-instances=0 \
+    --max-instances=1 \
+    --project=utx-dev \
+    --concurrency=100 \
+    --allow-unauthenticated \
+    --execution-environment=gen2 \
+    --port=3059 \
+    --set-env-vars=GOOGLE_ENTRYPOINT="gunicorn --timeout 180 api:app"

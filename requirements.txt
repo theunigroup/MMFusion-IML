@@ -10,3 +10,6 @@ timm
 Pillow
 matplotlib
 pydantic
+flask
+gunicorn
+python-json-logger
